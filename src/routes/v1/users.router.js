@@ -1,13 +1,11 @@
-import { Router } from 'express'
-
+const { Router } = require('express')
+const { UsersService } = require('../../services/Users.service.js')
 const router = Router()
+const usersService = new UsersService()
 
-router.get('/', (req, res) => {
-  res.json({
-    name: 'Alexito',
-    pareja: 'Florencia',
-    estado: 'A la distancia'
-  })
+router.get('/', async (req, res) => {
+  const users = await usersService.getAllUsers()
+  res.json(users)
 })
 
-export default router
+module.exports = router

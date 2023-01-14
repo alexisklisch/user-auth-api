@@ -1,11 +1,11 @@
-import Joi from 'joi'
+const Joi = require('joi')
 
-const id = Joi.number().integer()
-const username = Joi.string().alphanum().min(3).max(16)
-const age = Joi.number().min(18)
+const userSchema = Joi.object({
+  id: Joi.number().integer(),
+  username: Joi.string().min(5),
+  email: Joi.string().email(),
+  age: Joi.number().integer().min(18),
+  password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/)
+}).with('id', 'username', 'email', 'password')
 
-export const userSchema = {
-  id: id.required(),
-  username: username.required(),
-  age
-}
+module.exports = userSchema

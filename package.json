@@ -2,10 +2,13 @@
   "name": "user-auth-api",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:revert": "sequelize-cli db:migrate:undo",
+    "migrations:delete": "sequelize-cli db:migrate:undo:all"
   },
   "keywords": [],
   "author": "Alexis Klisch <dev@alexisklisch.com>",
@@ -16,6 +19,7 @@
     "standard": "17.0.0"
   },
   "dependencies": {
+    "dotenv": "16.0.3",
     "express": "4.18.2",
     "joi": "17.7.0",
     "pg": "^8.8.0",
