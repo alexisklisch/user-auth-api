@@ -1,11 +1,11 @@
 const Joi = require('joi')
 
-const userSchema = Joi.object({
+const createUserSchema = Joi.object({
   id: Joi.number().integer(),
-  username: Joi.string().min(5),
-  email: Joi.string().email(),
+  username: Joi.string().min(5).required(),
+  email: Joi.string().email().required(),
   age: Joi.number().integer().min(18),
-  password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/)
-}).with('id', 'username', 'email', 'password')
+  password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required()
+})
 
-module.exports = userSchema
+module.exports = { createUserSchema }

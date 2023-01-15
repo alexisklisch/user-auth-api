@@ -19,6 +19,7 @@
     "standard": "17.0.0"
   },
   "dependencies": {
+    "@hapi/boom": "10.0.0",
     "dotenv": "16.0.3",
     "express": "4.18.2",
     "joi": "17.7.0",
@@ -28,5 +29,12 @@
   },
   "eslintConfig": {
     "extends": "standard"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "spaceBeforeFunctionParen": true
   }
 }

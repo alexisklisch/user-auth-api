@@ -1,5 +1,6 @@
 const express = require('express')
 const { routerApi } = require('./routes/index.js')
+const { errorHandler, logErrors, boomErrorHandler } = require('./middlewares/error.handler')
 
 const app = express()
 
@@ -9,6 +10,12 @@ app.use(express.json())
 // Router
 routerApi(app)
 
+// More middlewares
+app.use(logErrors)
+app.use(boomErrorHandler)
+app.use(errorHandler)
+
+// Init the server
 const conection = app.listen(3000, () => {
-  console.log(`Estamos en ${conection.address().port}`)
+  console.log(`We are on the port ${conection.address().port}`)
 })

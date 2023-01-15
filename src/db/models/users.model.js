@@ -9,12 +9,16 @@ const UserSchema = {
     primaryKey: true,
     type: DataTypes.INTEGER
   },
-  username: {
+  email: {
     allowNull: false,
     unique: true,
     type: DataTypes.STRING
   },
-  email: {
+  password: {
+    allowNull: false,
+    type: DataTypes.STRING
+  },
+  username: {
     allowNull: false,
     unique: true,
     type: DataTypes.STRING
@@ -23,7 +27,6 @@ const UserSchema = {
     type: DataTypes.INTEGER
   }
 }
-
 class User extends Model {
   static associate (models) {}
 
