@@ -1,4 +1,5 @@
 const { DataTypes, Model } = require('sequelize')
+const bcrypt = require('bcryptjs')
 
 const USERS_TABLE = 'users'
 
@@ -25,6 +26,10 @@ const UserSchema = {
   },
   age: {
     type: DataTypes.INTEGER
+  },
+  role: {
+    allowNull: false,
+    type: DataTypes.STRING
   }
 }
 class User extends Model {
@@ -35,7 +40,13 @@ class User extends Model {
       sequelize,
       tableName: USERS_TABLE,
       modelName: 'Users',
-      timestamps: false
+      timestamps: false,
+      hooks: {
+        beforeCreate: async (user, options) => {
+          const password = await bcrypt.hash(user.password, 10)
+          user.password = password
+        }
+      }
     }
   }
 }

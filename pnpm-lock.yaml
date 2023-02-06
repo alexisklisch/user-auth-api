@@ -2,20 +2,22 @@ lockfileVersion: 5.4
 
 specifiers:
   '@hapi/boom': 10.0.0
+  bcryptjs: ^2.4.3
   dotenv: 16.0.3
   express: 4.18.2
   joi: 17.7.0
   nodemon: 2.0.20
-  passport: ^0.6.0
-  passport-local: ^1.0.0
-  pg: ^8.8.0
-  pg-hstore: ^2.3.4
-  sequelize: ^6.28.0
+  passport: 0.6.0
+  passport-local: 1.0.0
+  pg: 8.8.0
+  pg-hstore: 2.3.4
+  sequelize: 6.28.0
   sequelize-cli: 6.5.2
   standard: 17.0.0
 
 dependencies:
   '@hapi/boom': 10.0.0
+  bcryptjs: 2.4.3
   dotenv: 16.0.3
   express: 4.18.2
   joi: 17.7.0
@@ -263,6 +265,10 @@ packages:
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
+
+  /bcryptjs/2.4.3:
+    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
+    dev: false
 
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}

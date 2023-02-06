@@ -6,6 +6,7 @@ const app = express()
 
 // Middlewares
 app.use(express.json())
+require('./utils/auth/index.js')
 
 // Router
 routerApi(app)

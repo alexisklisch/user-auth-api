@@ -8,7 +8,8 @@ const createUserSchema = Joi.object({
   username: Joi.string().min(5).required(),
   email: Joi.string().email().required(),
   age: Joi.number().integer().min(18),
-  password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required()
+  password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required(),
+  role: Joi.string().max(12)
 })
 
 module.exports = { createUserSchema, getUserByIdSchema }
