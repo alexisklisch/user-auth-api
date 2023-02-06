@@ -1,5 +1,8 @@
 const Joi = require('joi')
 
+const getUserByIdSchema = Joi.object({
+  id: Joi.number().integer().required()
+})
 const createUserSchema = Joi.object({
   id: Joi.number().integer(),
   username: Joi.string().min(5).required(),
@@ -8,4 +11,4 @@ const createUserSchema = Joi.object({
   password: Joi.string().pattern(/^[a-zA-Z0-9]{3,30}$/).required()
 })
 
-module.exports = { createUserSchema }
+module.exports = { createUserSchema, getUserByIdSchema }

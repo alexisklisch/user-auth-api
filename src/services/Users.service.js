@@ -8,8 +8,13 @@ class UsersService {
   }
 
   async getUserById (id) {
-    const rta = await models.Users.findByPk(id)
-    return rta
+    return await models.Users.findByPk(id)
+  }
+
+  async getUserByEmail (email) {
+    return await models.Users.findOne({
+      where: { email }
+    })
   }
 
   async createUser (user) {
