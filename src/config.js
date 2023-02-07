@@ -9,7 +9,8 @@ const config = {
   dbHost: process.env.DB_HOST,
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
-  ip: process.env.IP
+  ip: process.env.IP,
+  jwtSecret: process.env.JWT_SECRET
 }
 
 module.exports = config
